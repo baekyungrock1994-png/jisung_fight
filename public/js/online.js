@@ -200,8 +200,7 @@ class MultiplayerManager {
             document.getElementById('online-p2-status').innerText = '고르는 중...';
             document.getElementById('online-p2-status').className = 'text-yellow-400 font-bold';
             
-            document.getElementById('btn-online-lockin').innerText = '캐릭터 확정';
-            document.getElementById('btn-online-lockin').className = 'mt-8 px-12 py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-2xl rounded-full font-bold transition-colors shadow-[0_0_15px_rgba(79,70,229,0.8)]';
+            resetLockInButton();
 
             renderOnlineCharGrid();
             selectOnlineChar(isHost ? p1Selection : p2Selection, true);
@@ -351,6 +350,7 @@ function checkAllReady() {
             document.getElementById('online-p2-status').innerText = '고르는 중...';
             document.getElementById('online-p2-status').className = 'text-yellow-400 font-bold';
             
+            resetLockInButton();
             renderOnlineCharGrid();
             selectOnlineChar(p1Selection, true);
         }, 500);
@@ -394,14 +394,20 @@ function selectOnlineChar(key, isInit = false) {
     if (!isInit) mpManager.sendMsg({type: 'hover_char', char: key});
 }
 
+function resetLockInButton() {
+    const btn = document.getElementById('btn-online-lockin');
+    btn.innerText = '게임 시작';
+    btn.className = 'mt-3 px-12 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-2xl rounded-full font-bold transition-colors shadow-[0_0_15px_rgba(79,70,229,0.8)]';
+}
+
 function lockInOnlineChar() {
     if (isOnlineCharLocked) return;
     let myChar = isHost ? p1Selection : p2Selection;
     if (!myChar) return;
     
     isOnlineCharLocked = true;
-    document.getElementById('btn-online-lockin').innerText = '확정 대기 중...';
-    document.getElementById('btn-online-lockin').className = 'mt-8 px-12 py-4 bg-gray-600 text-white text-2xl rounded-full font-bold shadow-lg';
+    document.getElementById('btn-online-lockin').innerText = '상대방을 기다리는 중...';
+    document.getElementById('btn-online-lockin').className = 'mt-3 px-12 py-3 bg-gray-600 text-white text-2xl rounded-full font-bold shadow-lg';
     
     let myStatusEl = document.getElementById(isHost ? 'online-p1-status' : 'online-p2-status');
     myStatusEl.innerText = '확정 (Locked)';

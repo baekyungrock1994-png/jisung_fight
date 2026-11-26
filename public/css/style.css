@@ -117,3 +117,8 @@ canvas { display: block; }
     font-size: 14px;
 }
 @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 10px #fbbf24; } 50% { transform: scale(1.1); box-shadow: 0 0 20px #fbbf24; } 100% { transform: scale(1); box-shadow: 0 0 10px #fbbf24; } }
+
+/* 온라인 캐릭터 선택: 게임 화면(576px) 안에 시작 버튼까지 들어오도록 6열로 배치 */
+#online-char-grid { grid-template-columns: repeat(6, 1fr); gap: 6px; width: 540px; margin-bottom: 0; }
+#online-char-grid .char-card { padding: 6px 2px; }
+#online-char-grid .char-color-box { width: 28px; height: 28px; margin-bottom: 4px; }

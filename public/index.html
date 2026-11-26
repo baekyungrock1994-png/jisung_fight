@@ -192,32 +192,32 @@
         </div>
 
         <!-- 온라인 캐릭터 선택 창 (준비 완료 후 표시) -->
-        <div id="online-char-select" style="display:none; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
-            <h2 class="text-4xl text-white mb-2 font-bold italic drop-shadow-lg">캐릭터 선택</h2>
-            <p class="text-gray-400 mb-6 text-sm">상대방과 겹치지 않게 캐릭터를 고르세요!</p>
+        <div id="online-char-select" style="display:none; width: 100%; height: 100%; flex-direction: column; align-items: center; justify-content: center; padding: 12px;">
+            <h2 class="text-3xl text-white mb-1 font-bold italic drop-shadow-lg">캐릭터 선택</h2>
+            <p class="text-gray-400 mb-3 text-sm">캐릭터를 고른 뒤, 두 사람 모두 '게임 시작'을 누르면 대전이 시작됩니다.</p>
             
-            <div class="flex gap-8 w-full justify-center items-start">
+            <div class="flex gap-4 w-full justify-center items-start">
                 <!-- Host (P1) -->
-                <div class="w-56 text-center border-2 border-red-500 p-4 rounded-xl bg-gray-900 shadow-[0_0_20px_rgba(239,68,68,0.5)]">
+                <div class="w-48 text-center border-2 border-red-500 p-4 rounded-xl bg-gray-900 shadow-[0_0_20px_rgba(239,68,68,0.5)]">
                     <h3 class="text-red-500 text-2xl mb-4 font-bold">Host (P1)</h3>
                     <div id="online-p1-char-name" class="text-xl text-white mb-4 h-8">선택 중...</div>
                     <div id="online-p1-status" class="text-yellow-400 font-bold">고르는 중...</div>
                 </div>
                 
                 <!-- Grid -->
-                <div class="char-grid bg-gray-800 p-4 rounded-xl border border-gray-600" id="online-char-grid" style="width: 500px;">
+                <div class="char-grid bg-gray-800 p-3 rounded-xl border border-gray-600" id="online-char-grid">
                     <!-- JS 렌더링 -->
                 </div>
                 
                 <!-- Guest (P2) -->
-                <div class="w-56 text-center border-2 border-blue-500 p-4 rounded-xl bg-gray-900 shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+                <div class="w-48 text-center border-2 border-blue-500 p-4 rounded-xl bg-gray-900 shadow-[0_0_20px_rgba(59,130,246,0.5)]">
                     <h3 class="text-blue-500 text-2xl mb-4 font-bold">Guest (P2)</h3>
                     <div id="online-p2-char-name" class="text-xl text-white mb-4 h-8">선택 중...</div>
                     <div id="online-p2-status" class="text-yellow-400 font-bold">고르는 중...</div>
                 </div>
             </div>
             
-            <button id="btn-online-lockin" onclick="lockInOnlineChar()" class="mt-8 px-12 py-4 bg-indigo-600 hover:bg-indigo-500 text-white text-2xl rounded-full font-bold transition-colors shadow-[0_0_15px_rgba(79,70,229,0.8)]">캐릭터 확정</button>
+            <button id="btn-online-lockin" onclick="lockInOnlineChar()" class="mt-3 px-12 py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-2xl rounded-full font-bold transition-colors shadow-[0_0_15px_rgba(79,70,229,0.8)]">게임 시작</button>
         </div>
     </div>
 </div>
