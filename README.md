@@ -45,12 +45,21 @@ http://localhost:5500 접속 후 창 두 개로 방 만들기 / 참가를 시험
 
 ## 인터넷에 올리기 (친구와 대전)
 
+프로젝트 폴더에서 실행합니다. 대상 프로젝트(`jisungfight`)는 `.firebaserc` 에 지정되어 있습니다.
+
+처음 한 번:
+
     npm install -g firebase-tools
     firebase login
-    firebase use --add
-    firebase deploy
 
-배포 후 나오는 `https://<프로젝트ID>.web.app` 주소를 친구에게 보내면 됩니다.
+배포 (코드를 고칠 때마다):
+
+    firebase deploy --only hosting
+
+배포 후 https://jisungfight.web.app 주소를 친구에게 보내면 됩니다.
+`firestore.rules` 를 고쳤을 때는 `firebase deploy --only firestore:rules` 를 실행합니다.
+
+PowerShell에서 "스크립트를 실행할 수 없습니다" 오류가 나면 `npm`, `firebase` 대신 `npm.cmd`, `firebase.cmd` 로 입력합니다.
 
 ## 알아둘 점
 
